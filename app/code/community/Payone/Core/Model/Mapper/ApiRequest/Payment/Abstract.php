@@ -233,7 +233,7 @@ abstract class Payone_Core_Model_Mapper_ApiRequest_Payment_Abstract
         }
 
         $params['it'] = Payone_Api_Enum_InvoicingItemType::GOODS;
-        $params['id'] = $sku;
+        $params['id'] = substr($sku, -32);
         $params['de'] = $name;
         $params['no'] = 1;
         $params['pr'] = $this->getCreditMemoAdjustmentNegative($creditmemo) * (-1);

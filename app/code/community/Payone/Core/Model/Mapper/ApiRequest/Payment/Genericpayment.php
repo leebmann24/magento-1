@@ -697,7 +697,7 @@ class Payone_Core_Model_Mapper_ApiRequest_Payment_Genericpayment
             }
 
             $params['it'] = Payone_Api_Enum_InvoicingItemType::GOODS;
-            $params['id'] = $itemData->getSku();
+            $params['id'] = substr($itemData->getSku(), -32);
             $params['pr'] = round($this->_convertItemPrice($itemData) * 100, 2);
             $params['no'] = $number;
             $params['de'] = $itemData->getName();
